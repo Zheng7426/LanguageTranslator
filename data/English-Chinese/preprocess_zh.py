@@ -1,5 +1,5 @@
 # coding: utf-8
-
+import re
 import jieba
 
 def process_text_file(read_file_path, write_file_path):
@@ -11,6 +11,8 @@ def process_text_file(read_file_path, write_file_path):
     with open(read_file_path, 'r', encoding="utf-8") as r:
         with open(write_file_path, 'a', encoding="utf-8") as w:
             for line in r:
+                line = line.strip()
+                line = re.sub("[\s+\.\!\/_,$%^*(+\"\')]+|[+——()?【】“”！，。？：；.、~@#￥%……&*（）]+", "", line)
                 words = jieba.lcut(line)
                 words = [w for w in words if w not in stop_words]
                 line = ' '.join(words)
