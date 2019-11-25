@@ -3,8 +3,8 @@ import os
 
 data_file_train = "translation2019zh_train.json"
 data_file_valid = "translation2019zh_valid.json"
-out_file_en = "output\\trainslation2019zh_en.txt"
-out_file_zh = "output\\trainslation2019zh_zh.txt"
+out_file_en = "output\\translation2019zh_en.txt"
+out_file_zh = "output\\translation2019zh_zh.txt"
 
 if not os.path.exists("output"):
     os.makedirs("output")
