@@ -20,5 +20,6 @@ def process_text_file(read_file_path, write_file_path):
 
 
 if __name__ == '__main__':
+    process_text_file('en-zh\\translation2019zh_zh.txt', 'data\\chinese.txt')
     process_text_file('en-zh\\UNv1.0.en-zh.zh', 'data\\chinese.txt')
-    process_text_file('en-zh\\trainslation2019zh_zh.txt', 'data\\chinese.txt')
+
