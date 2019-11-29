@@ -1,4 +1,3 @@
-
 max_sentence_num = 12000
 data_file_en = "data\\english.txt"
 data_file_zh = "data\\chinese.txt"
@@ -7,6 +6,7 @@ out_file_fix = "output\\en-zh-"
 FORMAT_JSON = 0
 FORMAT_GOGGLE = 1
 FORMAT_KERAS = 2
+
 
 def mergeTwoParallelCorpus(lang1, lang2, oformat):
     with open(lang1, 'r', encoding="utf-8") as enf, open(lang2, 'r', encoding="utf-8") as zhf:
@@ -20,7 +20,8 @@ def mergeTwoParallelCorpus(lang1, lang2, oformat):
                 of.close()
                 file_index += 1
                 print(file_index)
-                out_file = out_file_fix + "{:05d}".format(file_index) + (".json" if (oformat == FORMAT_JSON) else ".dat")
+                out_file = out_file_fix + "{:05d}".format(file_index) + (
+                    ".json" if (oformat == FORMAT_JSON) else ".dat")
                 of = open(out_file, 'w', encoding="utf-8")
             x = x.strip()
             y = y.strip()
@@ -32,7 +33,6 @@ def mergeTwoParallelCorpus(lang1, lang2, oformat):
                 of.write("{0} \t {1}\n".format(x, y))
         of.close()
 
+
 if __name__ == '__main__':
     mergeTwoParallelCorpus(data_file_en, data_file_zh, FORMAT_GOGGLE)
-
-

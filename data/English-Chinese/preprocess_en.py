@@ -11,6 +11,7 @@ def process_text_file(read_file_path, write_file_path):
             for line in r:
                 w.write(clean_lines(line) + '\n')
 
+
 # clean a list of lines
 def clean_lines(line):
     # cleaned = list()
@@ -33,12 +34,11 @@ def clean_lines(line):
     # remove tokens with numbers in them
     line = [word for word in line if word.isalpha()]
     # store as string
-    #cleaned.append(' '.join(line))
+    # cleaned.append(' '.join(line))
     return ' '.join(line)
+
 
 if __name__ == '__main__':
     # load English dataEnglish
     process_text_file('en-zh\\translation2019zh_en.txt', 'data\\english.txt')
     process_text_file('en-zh\\UNv1.0.en-zh.en', 'data\\english.txt')
-
-
