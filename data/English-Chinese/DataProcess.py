@@ -1,7 +1,7 @@
-max_sentence_num = 12000
-data_file_en = "data\\english.txt"
-data_file_zh = "data\\chinese.txt"
-out_file_fix = "output\\en-zh-"
+max_sentence_num = 24000
+data_file_en = "data\\cmn_en.txt"
+data_file_zh = "data\\cmn_zh.txt"
+out_file_fix = "output\\en-zh-cmn-"
 
 FORMAT_JSON = 0
 FORMAT_GOGGLE = 1
